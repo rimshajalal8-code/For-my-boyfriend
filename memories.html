@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #fff5f8; font-family: 'Quicksand', sans-serif; padding: 20px; text-align: center; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; }
+        .polaroid { background: white; padding: 10px 10px 30px 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: rotate(var(--r)); transition: 0.3s; }
+        .polaroid img { width: 100%; height: 180px; object-fit: cover; }
+        h1 { font-family: 'Dancing Script', cursive; color: #ff8fa3; font-size: 2.5rem; }
+        .back { display: block; margin-top: 40px; text-decoration: none; color: #ff8fa3; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Our Best Moments ❤️</h1>
+    <div class="gallery">
+        <div class="polaroid" style="--r:-2deg"><img src="1.jpg"></div>
+        <div class="polaroid" style="--r:3deg"><img src="2.jpg"></div>
+        <div class="polaroid" style="--r:-1deg"><img src="3.jpg"></div>
+        <div class="polaroid" style="--r:2deg"><img src="4.jpg"></div>
+        <div class="polaroid" style="--r:-3deg"><img src="5.jpg"></div>
+        <div class="polaroid" style="--r:1deg"><img src="6.jpg"></div>
+    </div>
+    <a href="index.html" class="back">← Back to Menu</a>
+</body>
+</html>
