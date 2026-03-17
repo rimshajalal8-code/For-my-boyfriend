@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Wish</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #fff5f8; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: 'Quicksand', sans-serif; }
+        .cake { position: relative; width: 200px; height: 150px; }
+        .tier { position: absolute; left: 50%; transform: translateX(-50%); background: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .tier-bottom { width: 180px; height: 60px; bottom: 0; }
+        .tier-top { width: 120px; height: 50px; bottom: 60px; }
+        .candle { position: absolute; bottom: 110px; left: 50%; width: 8px; height: 35px; background: #ffd1dc; transform: translateX(-50%); }
+        .flame { position: absolute; top: -15px; left: 50%; width: 12px; height: 20px; background: #ffdb58; border-radius: 50% 50% 20% 20%; transform: translateX(-50%); box-shadow: 0 0 15px #ffdb58; animation: flicker 0.6s infinite alternate; }
+        h1 { font-family: 'Dancing Script', cursive; color: #ff8fa3; margin-top: 50px; }
+        @keyframes flicker { from { opacity: 0.8; } to { opacity: 1; } }
+        .back { margin-top: 20px; text-decoration: none; color: #ff8fa3; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="cake"><div class="tier tier-bottom"></div><div class="tier tier-top"></div><div class="candle"><div class="flame"></div></div></div>
+    <h1>Happy Birthday, My Love!</h1>
+    <a href="index.html" class="back">← Back to Menu</a>
+</body>
+</html>
