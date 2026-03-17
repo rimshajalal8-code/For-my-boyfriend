@@ -1,79 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fce4ec; /* Soft Pink */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .container {
-            background: white;
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            z-index: 10;
-        }
-
-        h1 {
-            color: #d81b60;
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        p {
-            color: #880e4f;
-            font-size: 1.2rem;
-        }
-
-        /* Animated Hearts */
-        .heart {
-            position: absolute;
-            color: #ff4081;
-            font-size: 20px;
-            animation: float 5s infinite ease-in;
-            opacity: 0;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-        }
+        body { background-color: #fff5f8; font-family: 'Quicksand', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        h1 { font-family: 'Dancing Script', cursive; color: #ff8fa3; font-size: 3rem; margin-bottom: 30px; }
+        .menu { display: flex; flex-direction: column; gap: 15px; width: 280px; }
+        .btn { background: white; color: #ff8fa3; padding: 18px; border-radius: 15px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #ffebf0; text-align: center; font-size: 1.1rem; }
+        .btn:hover { background: #ffebf0; transform: translateY(-3px); }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Happy Birthday, Baby! ❤️</h1>
-        <p>Today is all about celebrating you and the joy you bring to my life.</p>
-        <p>You're the best thing that's ever happened to me!</p>
+    <h1>Happy Birthday, Baby ❤️</h1>
+    <div class="menu">
+        <a href="cake.html" class="btn">🎂 Make a Wish</a>
+        <a href="memories.html" class="btn">📸 Our Memories</a>
+        <a href="letter.html" class="btn">💌 My Message</a>
     </div>
-
-    <script>
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-        setInterval(createHeart, 300);
-    </script>
 </body>
 </html>
