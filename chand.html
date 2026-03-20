@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaand Raat Mubarak ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        body { background: #040816; margin: 0; overflow: hidden; font-family: 'Quicksand', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; color: white; }
+        #starField { position: absolute; width: 100%; height: 100%; z-index: 1; }
+        .star { position: absolute; background: white; border-radius: 50%; opacity: 0; animation: twinkle linear infinite; }
+        .moon-box { position: relative; width: 120px; height: 120px; margin-bottom: 25px; z-index: 5; }
+        .moon { position: absolute; width: 100%; height: 100%; border-radius: 50%; box-shadow: 18px 12px 0 0 #fbf8e1; transform: rotate(-35deg); filter: drop-shadow(0 0 20px #fbf8e1); animation: float 4s ease-in-out infinite; }
+        .card { text-align: center; background: rgba(255, 255, 255, 0.06); padding: 40px 30px; border-radius: 35px; backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 15px 35px rgba(0,0,0,0.5); z-index: 10; max-width: 320px; }
+        h1 { font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: #fbf8e1; margin: 0; }
+        p { font-size: 1.1rem; line-height: 1.6; color: #d1d9e6; margin: 20px 0; }
+        .music-btn { background: linear-gradient(45deg, #fbf8e1, #e6d5a7); color: #050b18; border: none; padding: 15px 35px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.4s; margin-top: 10px; }
+        @keyframes twinkle { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        @keyframes float { 0%, 100% { transform: rotate(-35deg) translateY(0px); } 50% { transform: rotate(-35deg) translateY(-15px); } }
+    </style>
+</head>
+<body>
+    <div id="starField"></div>
+    <div class="card">
+        <div class="moon-box"><div class="moon"></div></div>
+        <h1>Chaand Raat Mubarak ❤️</h1>
+        <p>Just like this moon, you light up my life. Wishing you the most beautiful night, Fawad!</p>
+        <button class="music-btn" onclick="toggleMusic()">🎵 Play Magic Music</button>
+    </div>
+    <audio id="eidMusic" loop><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"></audio>
+    <script>
+        const starField = document.getElementById('starField');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px'; star.style.height = star.style.width;
+            star.style.top = Math.random() * 100 + 'vh'; star.style.left = Math.random() * 100 + 'vw';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            starField.appendChild(star);
+        }
+        let playing = false;
+        function toggleMusic() {
+            const audio = document.getElementById('eidMusic');
+            playing ? audio.pause() : audio.play();
+            playing = !playing;
+            document.querySelector('.music-btn').innerHTML = playing ? "🎶 Music Playing..." : "🎵 Play Magic Music";
+        }
+    </script>
+</body>
+</html>
