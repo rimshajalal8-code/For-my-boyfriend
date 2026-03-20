@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaand Raat Mubarak My Love ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        body { background: #050b18; margin: 0; overflow: hidden; font-family: 'Quicksand', sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; color: white; }
+        
+        /* Starry Sky Background */
+        #starField { position: absolute; width: 100%; height: 100%; z-index: -1; }
+        .star { position: absolute; background: white; border-radius: 50%; opacity: 0; animation: twinkle linear infinite; }
+
+        /* Glowing Moon */
+        .moon-box { position: relative; width: 120px; height: 120px; margin: 0 auto 20px auto; }
+        .moon { position: absolute; width: 100%; height: 100%; border-radius: 50%; box-shadow: 18px 10px 0 0 #fbf8e1; transform: rotate(-35deg); filter: drop-shadow(0 0 20px #fbf8e1); animation: float 4s ease-in-out infinite; }
+
+        /* Aesthetic Card */
+        .card { text-align: center; background: rgba(255, 255, 255, 0.07); padding: 40px 25px; border-radius: 35px; backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 15px 35px rgba(0,0,0,0.5); z-index: 10; max-width: 320px; }
+        h1 { font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: #fbf8e1; margin: 0; text-shadow: 0 0 15px rgba(251, 248, 225, 0.4); }
+        p { font-size: 1.1rem; line-height: 1.6; color: #d1d9e6; margin: 20px 0; }
+        
+        /* Magic Button */
+        .music-btn { background: #fbf8e1; color: #050b18; border: none; padding: 12px 30px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(251, 248, 225, 0.2); }
+        .music-btn:active { transform: scale(0.95); }
+
+        @keyframes twinkle { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        @keyframes float { 0%, 100% { transform: rotate(-35deg) translateY(0px); } 50% { transform: rotate(-35deg) translateY(-15px); } }
+    </style>
+</head>
+<body>
+
+    <div id="starField"></div>
+
+    <div class="card">
+        <div class="moon-box"><div class="moon"></div></div>
+        <h1>Chaand Raat Mubarak ❤️</h1>
+        <p>Mere Chand, tumhare saath ye Chand Raat bohat special hai. I love you, Fawad!</p>
+        
+        <button class="music-btn" onclick="toggleMusic()">🎵 Press for Magic</button>
+    </div>
+
+    <audio id="eidMusic" loop>
+        <source src="https://files.catbox.moe/679i5j.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Stars generation
+        const starField = document.getElementById('starField');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 'px';
+            star.style.width = size; star.style.height = size;
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            starField.appendChild(star);
+        }
+
+        // Music Logic
+        let playing = false;
+        function toggleMusic() {
+            const audio = document.getElementById('eidMusic');
+            const btn = document.querySelector('.music-btn');
+            if (!playing) {
+                audio.play();
+                btn.innerHTML = "🎶 Music Playing...";
+                playing = true;
+            } else {
+                audio.pause();
+                btn.innerHTML = "🎵 Press for Magic";
+                playing = false;
+            }
+        }
+    </script>
+</body>
+</html>
